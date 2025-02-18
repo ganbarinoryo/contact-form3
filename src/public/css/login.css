@@ -1,0 +1,123 @@
+/* 基本リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ボディ全体のスタイル */
+body {
+    background-color: #F1ECE7;
+    color: #8B7969;
+    /* 全体の文字色を変更 */
+}
+
+/* ヘッダー */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-container {
+    height: 99px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 中央寄せ */
+    position: relative;
+}
+
+.site-title {
+    text-align: center;
+    font-family: 'Inika', serif;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+/* ログインボタン */
+.register-button {
+    position: absolute;
+    right: 20px;
+    font-family: 'Inika', serif;
+    font-weight: 400;
+    background-color: #F0F0F099;
+    border: 1px solid #D9C6B5;
+    color: #D9C6B5;
+    padding: 5px 22px;
+    text-decoration: none;
+}
+
+/* メインコンテンツ */
+main {
+    max-width: 600px;
+    margin: 5px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Register見出し（フォームの上に表示） */
+.register-section h2 {
+    text-align: center;
+    font-family: 'Inika', serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 35px;
+    padding-bottom: 5px;
+}
+
+/* フォームを枠で囲む */
+.register-section form {
+    border: 1px solid #C5B9B0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* フォームグループ */
+.form-group {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-group label {
+    display: block;
+    float: left;
+    margin-top: 15px;
+    padding-left: 35px;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 445px;
+    height: 55px;
+    border: none;
+    background-color: #F4F4F4;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+input::placeholder {
+    color: #BEB1A6;
+}
+
+/* 登録ボタン */
+.login-button {
+    background-color: #82756A;
+    /* ボタンの背景色 */
+    color: #fff;
+    /* 文字色をwhiteに */
+    font-size: 20px;
+    padding: 10px 40px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    /* ブロックレベルにして中央寄せ */
+    margin: 40px auto 0;
+    /* 上部に余白を取り、左右を自動で中央寄せ */
+}
+
+.login-button:hover {
+    background-color: #6f645f;
+    /* hover時の色（任意） */
+}
