@@ -37,7 +37,7 @@ header {
 /* ログインボタン */
 .login-button {
     position: absolute;
-    right: 33px;
+    right: 20px;
     font-family: 'Inika', serif;
     font-weight: 400;
     background-color: #F0F0F099;
