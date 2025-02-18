@@ -25,15 +25,15 @@
       <form action="/register" method="POST">
         <div class="form-group">
           <label for="name">お名前</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" placeholder="例: 山田 太郎" required>
         </div>
         <div class="form-group">
           <label for="email">メールアドレス</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" placeholder="例: test@example.com" required>
         </div>
         <div class="form-group">
           <label for="password">パスワード</label>
-          <input type="password" id="password" name="password" required>
+          <input type="password" id="password" name="password" placeholder="例: coachtech1106" required>
         </div>
         <div class="form-group">
           <button type="submit" class="register-button">登録</button>

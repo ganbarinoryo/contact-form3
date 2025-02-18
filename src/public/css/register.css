@@ -93,6 +93,12 @@ main {
     height: 55px;
     border: none;
     background-color: #F4F4F4;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+input::placeholder {
+    color:#BEB1A6;
 }
 
 /* 登録ボタン */
