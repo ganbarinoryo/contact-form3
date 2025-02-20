@@ -1,0 +1,226 @@
+/* 基本リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ボディ全体のスタイル */
+body {
+    background-color: #ffffff;
+    color: #8B7969;
+    /* 全体の文字色を変更 */
+}
+
+/* ヘッダー */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-container {
+    height: 99px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 中央寄せ */
+    position: relative;
+}
+
+.site-title {
+    text-align: center;
+    font-family: 'Inika', serif;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+/* ログインボタン */
+.register-button {
+    position: absolute;
+    right: 20px;
+    font-family: 'Inika', serif;
+    font-weight: 400;
+    background-color: #F0F0F099;
+    border: 1px solid #D9C6B5;
+    color: #D9C6B5;
+    padding: 5px 22px;
+    text-decoration: none;
+}
+
+/* メインコンテンツ */
+main {
+    max-width: 1183px;
+    margin: 5px auto;
+    padding: 20px;
+}
+
+.search-section {
+    max-width: 1183px;
+}
+
+/* Register見出し（フォームの上に表示） */
+.search-section h2 {
+    text-align: center;
+    font-family: 'Inika', serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 35px;
+    padding-bottom: 5px;
+}
+
+/* フォームコンテナ */
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    /* ボタン間の隙間を調整 */
+    justify-content: center;
+    /* ボタンを中央揃え */
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #C5B9B0;
+}
+
+/* 検索フォームの入力エリア */
+.search-container {
+    max-width: 1183px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 入力フィールド */
+.search-container input,
+.search-container select {
+    height: 50px;
+    color: #BEB1A6;
+    border: 1px solid #E3DED9;
+    background-color: #FBFBFB;
+    padding: 5px;
+    font-size: 18px;
+    min-width: 100px;
+}
+
+/* お名前・メアド欄 */
+.search-input {
+    width: 347px;
+}
+
+/* 性別選択 */
+.search_gender-select {
+    width: 102.5px;
+}
+
+/* お問い合わせ内容 */
+.search_order-select {
+    width: 223px;
+}
+
+/* 日付選択 */
+.search-date {
+    width: 149px;
+}
+
+/* ボタンコンテナ */
+.search-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* 検索ボタン */
+.search-button {
+    width: 102.5px;
+    height: 50px;
+    background-color: #8B7969;
+    color: #fff;
+    font-size: 17px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* リセットボタン */
+.reset-button {
+    width: 102.5px;
+    height: 50px;
+    background-color: #D9C6B5;
+    color: #fff;
+    font-size: 17px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.search-button:hover,
+.reset-button:hover {
+    background-color: #6f645f;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .search-container input,
+    .search-container select {
+        width: 100%;
+        flex: unset;
+    }
+
+    .search-buttons {
+        flex-direction: column;
+    }
+
+    .search-button,
+    .reset-button {
+        width: 100%;
+    }
+
+    .export-button {
+        width: 100%;
+    }
+}
+
+/* エクスポートボタン */
+.export-button {
+    display: block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    font-size: 18px;
+    background: #E1DBD699;
+    color: #8B7969;
+    border: none;
+    cursor: pointer;
+}
+
+/* テーブル */
+.data-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #C5B9B0;
+    padding: 10px;
+    text-align: center;
+}
+
+.data-table th {
+    background-color: #8B7969;
+    color: #ffffff;
+    font-weight: bold;
+}
