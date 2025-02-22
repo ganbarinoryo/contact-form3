@@ -87,18 +87,19 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    text-align: center;
 }
 
 /* 入力フィールド */
 .search-container input,
 .search-container select {
     height: 50px;
-    color: #BEB1A6;
+    text-align: center;
+    color: #8B7969;
     border: 1px solid #E3DED9;
     background-color: #FBFBFB;
     padding: 5px;
-    font-size: 18px;
+    font-size: 17px;
     min-width: 100px;
 }
 
@@ -110,16 +111,19 @@ main {
 /* 性別選択 */
 .search_gender-select {
     width: 102.5px;
+    text-align: center;
 }
 
 /* お問い合わせ内容 */
 .search_order-select {
     width: 223px;
+    text-align: center;
 }
 
 /* 日付選択 */
 .search-date {
     width: 149px;
+    text-align: center;
 }
 
 /* ボタンコンテナ */
@@ -209,18 +213,35 @@ main {
 .data-table {
     width: 100%;
     margin-top: 20px;
+    border: 1px solid #C5B9B0;
     border-collapse: collapse;
 }
 
 .data-table th,
 .data-table td {
-    border: 1px solid #C5B9B0;
     padding: 10px;
+    height: 59px;
     text-align: center;
+    border-top: 1px solid #C5B9B0;
+    border-bottom: 1px solid #C5B9B0;
 }
 
 .data-table th {
     background-color: #8B7969;
     color: #ffffff;
     font-weight: bold;
+    font-size: 20px;
+}
+
+.data-table td {
+    font-size: 18px;
+}
+
+.detail-button {
+    padding: 8px 20px;
+    font-size: 18px;
+    background: rgba(244, 244, 244, 0.3);
+    color: #D9C6B5;
+    border: 1px solid #D9C6B5;
+
 }

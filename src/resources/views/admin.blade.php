@@ -20,7 +20,7 @@
     <section class="search-section">
       <h2>Admin</h2>
       <div class="search-container">
-        <input type="text" placeholder="名前またはメールアドレス" class="search-input">
+        <input type="text" placeholder="名前やメールアドレスを入力してください" class="search-input">
         <select class="search_gender-select">
           <option value="">性別</option>
           <option value="1">男性</option>
