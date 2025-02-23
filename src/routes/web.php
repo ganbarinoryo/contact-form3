@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 
 
 /*
@@ -25,3 +26,5 @@ Route::get('/register', [AuthController::class, 'register']);
 Route::get('/login', [AuthController::class, 'login']);
 
 Route::get('/admin', [AdminController::class, 'admin']);
+
+Route::get('/contact', [ContactController::class, 'contact']);
