@@ -1,0 +1,103 @@
+/* 基本リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ボディ全体のスタイル */
+body {
+    background-color: #ffffff;
+    color: #8B7969;
+    /* 全体の文字色を変更 */
+}
+
+/* ヘッダー */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-container {
+    height: 99px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 中央寄せ */
+    position: relative;
+}
+
+.site-title {
+    text-align: center;
+    font-family: 'Inika', serif;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+/* メインコンテンツ */
+main {
+    max-width: 1183px;
+    margin: 5px auto;
+    padding: 20px;
+}
+
+.confirm-section {
+    max-width: 100%;
+    margin: 0 auto;
+    /* 水平方向の中央揃え */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 垂直方向の中央揃え */
+}
+
+/* Register見出し（フォームの上に表示） */
+.confirm-section h2 {
+    text-align: center;
+    font-family: 'Inika', serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 35px;
+    padding-bottom: 5px;
+}
+
+th {
+    width: 305px;
+    height: 70px;
+    font-size: 20px;
+    font-weight: lighter;
+    color: #ffffff;
+    border: 1px solid #E0DFDE;
+    background-color: #BAA899;
+}
+
+td {
+    width: 667px;
+    height: 70px;
+    padding-left: 50px;
+    font-size: 20px;
+    color: #8B7969;
+    border: 1px solid #E0DFDE;
+}
+
+.button-group {
+    margin-top: 40px;
+}
+
+.submit-button {
+    width: 120px;
+    height: 42px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #82756A;
+    border: none;
+}
+
+.back-button {
+    margin-left: 35px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #82756A;
+    background-color: #ffffff;
+    border-bottom: 1px solid #82756A;
+}
