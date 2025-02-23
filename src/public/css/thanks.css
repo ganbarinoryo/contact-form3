@@ -1,0 +1,63 @@
+/* 基本リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ボディ全体のスタイル */
+body {
+    background-color: #ffffff;
+    text-align: center;
+    /* 全体の文字色を変更 */
+}
+
+.thankyou-bg {
+    font-family: 'Inika', serif;
+    font-size: 280px;
+    /* 幅を280pxに設定 */
+    text-align: center;
+    /* テキストを中央揃え */
+    position: absolute;
+    /* 絶対配置 */
+    top: 50%;
+    /* 上から50%の位置に配置 */
+    left: 50%;
+    /* 左から50%の位置に配置 */
+    transform: translate(-50%, -50%);
+    /* 要素自体を中央に移動 */
+    white-space: nowrap;
+    /* テキストを1行で表示 */
+    color: #8B79690D;
+}
+
+.message {
+    text-align: center;
+    /* テキストを中央揃え */
+    position: absolute;
+    /* 絶対配置 */
+    top: 50%;
+    /* 上から50%の位置に配置 */
+    left: 50%;
+    /* 左から50%の位置に配置 */
+    transform: translate(-50%, -50%);
+    /* 要素自体を中央に移動 */
+}
+
+.message p {
+    font-size: 30px;
+    font-weight: bolder;
+    color: #8B7969;
+    white-space: nowrap;
+}
+
+.message button {
+    margin-top: 40px;
+    font-family: 'Inika', serif;
+    width: 140px;
+    height: 46px;
+    background-color: #82756A;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+}

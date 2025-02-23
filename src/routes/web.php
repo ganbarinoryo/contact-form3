@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ConfirmController;
+use App\Http\Controllers\ThanksController;
 
 
 /*
@@ -31,3 +32,5 @@ Route::get('/admin', [AdminController::class, 'admin']);
 Route::get('/contact', [ContactController::class, 'contact']);
 
 Route::get('/confirm', [ConfirmController::class, 'confirm']);
+
+Route::get('/thanks', [ThanksController::class, 'thanks']);
