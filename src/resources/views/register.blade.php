@@ -22,7 +22,8 @@
   <main>
     <section class="register-section">
       <h2>Register</h2>
-      <form action="/register" method="POST">
+      <form action="/auth/register" method="POST">
+        @csrf
         <div class="form-group">
           <label for="name">お名前</label>
           <input type="text" id="name" name="name" placeholder="例: 山田 太郎" required>

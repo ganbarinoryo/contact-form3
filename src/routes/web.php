@@ -19,17 +19,15 @@ use App\Http\Controllers\ThanksController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/auth/register', [AuthController::class, 'register']);
 
-Route::get('/register', [AuthController::class, 'register']);
-
-Route::get('/login', [AuthController::class, 'login']);
+Route::get('/auth/login', [AuthController::class, 'login']);
 
 Route::get('/admin', [AdminController::class, 'admin']);
 
-Route::get('/contact', [ContactController::class, 'contact']);
+Route::get('/', [ContactController::class, 'contact']);
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::get('/confirm', [ConfirmController::class, 'confirm']);
 

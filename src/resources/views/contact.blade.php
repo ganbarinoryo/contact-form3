@@ -18,7 +18,8 @@
 <main>
   <section class="contact-section">
     <h2>Contact</h2>
-    <form action="/contact" method="POST">
+    <form action="{{ route('contact.store') }}" method="POST">
+      @csrf
       <div class="form-group">
         <label for="last-name">お名前<span>※</span></label>
         <input class="first_name" type="text" id="last-name" name="last_name" placeholder="例: 山田" required>
@@ -28,11 +29,11 @@
       <div class="form-group">
         <label>性別<span>※</span></label>
          <div class="radio-button">
-         <input type="radio" id="male" name="gender" value="男性" checked>
+         <input type="radio" id="male" name="gender" value="1" checked>
          <label for="male">男性</label>
-         <input type="radio" id="female" name="gender" value="女性">
+         <input type="radio" id="female" name="gender" value="2">
          <label for="female">女性</label>
-         <input type="radio" id="other" name="gender" value="その他">
+         <input type="radio" id="other" name="gender" value="3">
          <label for="other">その他</label>
         </div>
       </div>
@@ -43,13 +44,14 @@
       </div>
 
       <div class="form-group">
-        <label for="phone1">電話番号<span>※</span></label>
-        <div class="phone inika-font">
-         <input type="text" id="phone1" name="phone1" pattern="\d{3}" maxlength="3" placeholder="080" required> -
-         <input type="text" id="phone2" name="phone2" pattern="\d{4}" maxlength="4" placeholder="1234" required> -
-         <input type="text" id="phone3" name="phone3" pattern="\d{4}" maxlength="4" placeholder="5678" required>
-        </div>
+          <label for="phone1">電話番号<span>※</span></label>
+          <div class="phone inika-font">
+              <input type="tel" id="phone1" name="phone1" inputmode="numeric" pattern="\d{3}" maxlength="3" size="3" placeholder="080" required> -
+              <input type="tel" id="phone2" name="phone2" inputmode="numeric" pattern="\d{4}" maxlength="4" size="4" placeholder="1234" required> -
+              <input type="tel" id="phone3" name="phone3" inputmode="numeric" pattern="\d{4}" maxlength="4" size="4" placeholder="5678" required>
+          </div>
       </div>
+
 
       <div class="form-group">
         <label for="address">住所<span>※</span></label>
@@ -62,18 +64,16 @@
       </div>
 
       <div class="form-group">
-        <label for="inquiry-type">お問い合わせの種類<span>※</span></label>
-        <select id="inquiry-type" name="inquiry_type" class="custom-select" required>
+        <label for="content">お問い合わせの種類<span>※</span></label>
+        <select id="content" name="content" class="custom-select" required>
           <option value="">選択してください</option>
-          <option value="注文">注文</option>
-          <option value="返品">返品</option>
-          <option value="その他">その他</option>
+          <option value="1">商品の交換について</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label for="message">お問い合わせ内容<span>※</span></label>
-        <textarea id="message" name="message" rows="5" placeholder="お問い合わせ内容をご記載ください" required></textarea>
+        <label for="detail">お問い合わせ内容<span>※</span></label>
+        <textarea id="detail" name="detail" rows="5" placeholder="お問い合わせ内容をご記載ください" required></textarea>
       </div>
 
       <div class="form-group">

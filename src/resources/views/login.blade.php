@@ -21,7 +21,8 @@
   <main>
     <section class="register-section">
       <h2>Login</h2>
-      <form action="/login" method="POST">
+      <form action="/auth/login" method="POST">
+        @csrf
         <div class="form-group">
           <label for="email">メールアドレス</label>
           <input type="email" id="email" name="email" placeholder="例: test@example.com" required>
