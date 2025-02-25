@@ -20,9 +20,13 @@ use App\Http\Controllers\ThanksController;
 */
 
 // 認証・管理系ルート
-Route::get('/auth/register', [AuthController::class, 'register'])->name('auth.register');
+Route::get('/auth/register', [AuthController::class, 'register'])->name('register');
+Route::post('/auth/register', [AuthController::class, 'register'])->name('register');
+
 Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login');
+
+Route::get('/admin', [AdminController::class, 'admin']);
 
 // 入力画面（トップページも含む）
 Route::get('/', [ContactController::class, 'create'])->name('contact.create');
