@@ -19,16 +19,27 @@ use App\Http\Controllers\ThanksController;
 |
 */
 
-Route::get('/auth/register', [AuthController::class, 'register']);
+// 認証・管理系ルート
+Route::get('/auth/register', [AuthController::class, 'register'])->name('auth.register');
+Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 
-Route::get('/auth/login', [AuthController::class, 'login']);
+// 入力画面（トップページも含む）
+Route::get('/', [ContactController::class, 'create'])->name('contact.create');
+Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 
-Route::get('/admin', [AdminController::class, 'admin']);
-
-Route::get('/', [ContactController::class, 'contact']);
-
+// 入力内容の受け取りと確認画面への遷移
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-Route::get('/confirm', [ConfirmController::class, 'confirm']);
+// 送信処理（DB登録後、thanks へ）
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
-Route::get('/thanks', [ThanksController::class, 'thanks']);
+// 確認画面の表示・送信（確認画面は GET で表示、送信処理は POST で別ルートを利用するケース）
+Route::get('/confirm', [ConfirmController::class, 'confirm'])->name('confirm');
+Route::post('/confirm', [ConfirmController::class, 'submit'])->name('confirm.submit');
+
+// 修正用：入力画面へ戻る
+Route::get('/contact/edit', [ContactController::class, 'edit'])->name('contact.edit');
+
+// 完了画面
+Route::get('/thanks', [ThanksController::class, 'thanks'])->name('thanks');

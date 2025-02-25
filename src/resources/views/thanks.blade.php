@@ -13,7 +13,7 @@
 
     <div class="message">
         <p>お問い合わせありがとうございました</p>
-        <button class="button">HOME</button>
+        <button class="button" onclick="location.href='{{ route('contact.create') }}'">HOME</button>
     </div>
 </body>
 </html>
