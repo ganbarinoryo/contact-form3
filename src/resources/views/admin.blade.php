@@ -6,6 +6,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>FashionablyLate</title>
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
   <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
@@ -47,6 +48,10 @@
 
     <section class="export-section">
       <button class="export-button">エクスポート</button>
+      <!-- ページネーション -->
+      <div class="pagination">
+          {{ $contacts->links('vendor.pagination.bootstrap-4') }}
+      </div>
     </section>
 
     <section class="table-section">

@@ -197,6 +197,13 @@ main {
     }
 }
 
+.export-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* エクスポートボタン */
 .export-button {
     display: block;
@@ -207,6 +214,45 @@ main {
     color: #8B7969;
     border: none;
     cursor: pointer;
+}
+
+/* ページネーション全体のコンテナ */
+.pagination {
+    padding-top: 7px;
+    padding-left: 5px;
+    margin: 0;
+    /* 上下に余白、中央揃え */
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ページ番号やリンクのスタイル */
+.page-link {
+    padding: 7.5px 15px;
+    color: #8B7969;
+    /* リンクの文字色 */
+    background-color: #fff;
+    /* 背景色 */
+    border: 1px solid #dee2e6;
+    /* 境界線 */
+    border-radius: 3px;
+    /* 角を丸くする */
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+/* ホバー時のスタイル */
+.page-link:hover {
+    background-color: #e9ecef;
+    color: #8B7969;
+    text-decoration: none;
+}
+
+/* 現在のページ */
+.page-item.active .page-link {
+    background-color: #8B7969;
+    color: #fff;
+    border-color: #E0DFDE;
 }
 
 /* テーブル */
