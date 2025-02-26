@@ -8,7 +8,6 @@
     /* 画面全体をカバー */
     height: 100%;
     overflow: auto;
-    display: flex;
     align-items: center;
     justify-content: center;
 }

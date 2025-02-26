@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>Admin - FashionablyLate</title>
+  <title>FashionablyLate</title>
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
   <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
@@ -19,27 +19,31 @@
   </header>
 
   <main>
+    <!-- 検索フォーム -->
     <section class="search-section">
       <h2>Admin</h2>
-      <div class="search-container">
-        <input type="text" placeholder="名前やメールアドレスを入力してください" class="search-input">
-        <select class="search_gender-select">
-          <option value="">性別</option>
-          <option value="1">男性</option>
-          <option value="2">女性</option>
-          <option value="3">その他</option>
-        </select>
-        <select class="search_order-select">
-          <option value="">お問い合わせ種類</option>
-          <option value="1">注文</option>
-          <option value="2">返品</option>
-          <option value="3">その他</option>
-        </select>
-        <input type="date" class="search-date">
-        <button class="search-button">検索</button>
-        <button class="reset-button">リセット</button>
-      </div>
+      <form action="{{ route('admin.search') }}" method="GET">
+        <div class="search-container">
+          <input type="text" name="search" placeholder="名前やメールアドレスを入力してください" class="search-input" value="{{ request('search') }}">
+          <select name="gender" class="search_gender-select">
+            <option value="">性別</option>
+            <option value="1" {{ request('gender') == '1' ? 'selected' : '' }}>男性</option>
+            <option value="2" {{ request('gender') == '2' ? 'selected' : '' }}>女性</option>
+            <option value="3" {{ request('gender') == '3' ? 'selected' : '' }}>その他</option>
+          </select>
+          <select name="order" class="search_order-select">
+            <option value="">お問い合わせの種類</option>
+            <option value="1" {{ request('order') == '1' ? 'selected' : '' }}>商品の交換について</option>
+            <option value="2" {{ request('order') == '2' ? 'selected' : '' }}>返品</option>
+            <option value="3" {{ request('order') == '3' ? 'selected' : '' }}>その他</option>
+          </select>
+          <input type="date" name="date" class="search-date" value="{{ request('date') ?? date('Y-m-d') }}">
+          <button type="submit" class="search-button">検索</button>
+          <button type="reset" class="reset-button">リセット</button>
+        </div>
+      </form>
     </section>
+
 
     <section class="export-section">
       <button class="export-button">エクスポート</button>
@@ -182,9 +186,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var resetButton = document.querySelector('.reset-button');
+    var searchForm = document.getElementById('searchForm');
+    
+    resetButton.addEventListener('click', function(event) {
+      // フォームのすべての input, select 要素を空にする
+      searchForm.querySelectorAll('input[type="text"], input[type="date"]').forEach(function(input) {
+        input.value = '';
+      });
+      searchForm.querySelectorAll('select').forEach(function(select) {
+        select.selectedIndex = 0;
+      });
+    });
+  });
+
 </script>
-
-
 
 </body>
 </html>
