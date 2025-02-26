@@ -31,6 +31,8 @@ Route::get('/admin', [AdminController::class, 'admin']);
 // 入力画面（トップページも含む）
 Route::get('/', [ContactController::class, 'create'])->name('contact.create');
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
+Route::delete('/contact/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
+
 
 // 入力内容の受け取りと確認画面への遷移
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

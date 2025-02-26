@@ -69,6 +69,7 @@
           </tr>
         </table>
       </div>
+
       <div class="button-group">
         <!-- 送信ボタンは最終確定時にPOSTするなど実装 -->
         <form action="{{ route('contact.send') }}" method="POST">
@@ -79,5 +80,6 @@
       </div>
     </section>
   </main>
+
 </body>
 </html>

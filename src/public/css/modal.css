@@ -1,0 +1,73 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* 画面全体をカバー */
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* モーダルコンテンツ */
+/* 固定サイズの場合は width, height を設定 */
+.modal-content {
+    text-align: left;
+    background-color: #fff;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 700px;  /* 固定幅 */
+    height: 750px; /* 固定高さ */
+    position: relative;
+}
+
+.modal table {
+    margin: 40px auto;
+    width: 88%;
+    border-collapse: collapse;
+}
+
+.modal table th {
+    font-weight: bold;
+    padding: 20px 15px;
+    white-space: nowrap;
+}
+
+.modal table td {
+    padding-left: 20px;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.delete-button {
+    display: block;
+    margin: 60px auto 0; /* 上部に20pxの余白、左右中央揃え */
+    width: 76px;   /* 固定幅 (単位: px を明示) */
+    height: 39px;  /* 固定高さ */
+    padding: 8px 20px;  /* 上下8px、左右20px */
+    background: #BA370D;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background: #BA370D;
+    border: none;
+    color: #fff;
+}
