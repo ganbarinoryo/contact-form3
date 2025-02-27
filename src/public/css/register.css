@@ -121,3 +121,16 @@ input::placeholder {
     background-color: #6f645f;
     /* hover時の色（任意） */
 }
+
+.error {
+    color: #d9534f;
+    /* Bootstrap の danger 色など、目立つ赤色 */
+    font-size: 16px;
+    /* 適度な文字サイズ */
+    margin-top: 5px;
+    /* 入力欄との間に少し余白を入れる */
+    text-align: left;
+    /* 左寄せにして、入力欄と揃える */
+    padding-left: 35px;
+    /* ラベルと同じ左余白に合わせる */
+}

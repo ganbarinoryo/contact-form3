@@ -21,15 +21,21 @@
   <main>
     <section class="register-section">
       <h2>Login</h2>
-      <form action="/auth/login" method="POST">
+      <form action="{{ route('auth.login') }}" method="POST" novalidate>
         @csrf
         <div class="form-group">
           <label for="email">メールアドレス</label>
-          <input type="email" id="email" name="email" placeholder="例: test@example.com" required>
+          <input type="email" id="email" name="email" placeholder="例: test@example.com" required value="{{ old('email') }}">
+          @error('email')
+            <div class="error">{{ $message }}</div>
+          @enderror
         </div>
         <div class="form-group">
           <label for="password">パスワード</label>
           <input type="password" id="password" name="password" placeholder="例: coachtech1106" required>
+          @error('password')
+            <div class="error">{{ $message }}</div>
+          @enderror
         </div>
         <div class="form-group">
           <button type="submit" class="login-button">ログイン</button>
@@ -37,5 +43,6 @@
       </form>
     </section>
   </main>
+
 </body>
 </html>

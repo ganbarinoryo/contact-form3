@@ -20,10 +20,10 @@ use App\Http\Controllers\ThanksController;
 */
 
 // 認証・管理系ルート
-Route::get('/auth/register', [AuthController::class, 'register'])->name('register');
+Route::get('/auth/register', [AuthController::class, 'showRegister'])->name('showRegister');
 Route::post('/auth/register', [AuthController::class, 'register'])->name('register');
 
-Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('/auth/login', [AuthController::class, 'showLogin'])->name('auth.login');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login');
 
 Route::get('/admin', [AdminController::class, 'admin']);
