@@ -82,6 +82,8 @@ td {
 
 .button-group {
     margin-top: 40px;
+    display: flex;
+    align-items: center;
 }
 
 .submit-button {
@@ -89,15 +91,15 @@ td {
     height: 42px;
     font-size: 20px;
     color: #ffffff;
-    background-color: #82756A;
+    background-color: #8B7969;
     border: none;
 }
 
 .back-button {
     margin-left: 35px;
     font-size: 20px;
-    text-decoration: none;
-    color: #82756A;
+    color: #8B7969;
     background-color: #ffffff;
-    border-bottom: 1px solid #82756A;
+    text-decoration: none;
+    border-bottom: 1px solid #8B7969;
 }
