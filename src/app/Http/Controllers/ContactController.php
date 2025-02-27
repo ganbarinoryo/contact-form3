@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use App\Models\Category;
 
@@ -17,22 +18,10 @@ class ContactController extends Controller
     }
 
     // 入力内容を受け取り、確認画面へ遷移
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        $validated = $request->validate([
-            'first_name'  => 'required|string|max:50',
-            'last_name'   => 'required|string|max:50',
-            'gender'      => 'required|in:1,2,3',
-            'email'       => 'required|email',
-            'phone1'      => 'required|digits:3',
-            'phone2'      => 'required|digits:4',
-            'phone3'      => 'required|digits:4',
-            'address'     => 'required|string|max:255',
-            'building'    => 'nullable|string|max:255',
-            'content'     => 'required|in:1', // content をカテゴリー情報として利用
-            'detail'      => 'required|string',
-            'category_id' => 'nullable|integer', // 後で設定するので nullable にしておく
-        ]);
+        // ContactRequest によりバリデーション済みのデータを取得
+        $validated = $request->validated();
 
         // DB保存ではなく、確認画面用にセッションに保存
         session(['contact' => $validated]);

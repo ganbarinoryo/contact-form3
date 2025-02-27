@@ -53,7 +53,10 @@ main {
 .form-group {
     display: flex;
     align-items: center;
+    justify-content: left;
     margin-bottom: 15px;
+    width: 100%;
+    position: relative;
 }
 
 /* ラベル */
@@ -66,15 +69,6 @@ main {
 
 .form-group span {
     color: red;
-}
-
-/* フォームの各行の配置を調整 */
-.form-group {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-bottom: 15px;
-    width: 100%;
 }
 
 /* ラベル */
@@ -106,8 +100,10 @@ main {
 .email {
     flex: 1;
     font-family: 'Inika', serif;
+    margin-left: 8px;
     height: 38px;
     padding: 5px;
+    width: 618px;
     border: 1px solid #E3DED9;
     background-color: #FBFBFB;
     font-size: 16px;
@@ -131,9 +127,10 @@ main {
 .address,
 .building {
     flex: 1;
-    width: 100%;
+    width: 618px;
     height: 38px;
     padding: 5px;
+    margin-left: 96px;
     border: 1px solid #E3DED9;
     background-color: #FBFBFB;
     font-size: 16px;
@@ -211,42 +208,82 @@ main {
     background-color: #6f645f;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
+
     /* メインコンテンツ */
-        main {
-            max-width: 872px;
-            margin: 5px auto;
-            padding: 20px;
-        }
-    
-        /* Register見出し（フォームの上に表示） (省略) */
-    
-        /* フォーム全体のスタイル */
+    main {
+        max-width: 872px;
+        margin: 5px auto;
+        padding: 20px;
+    }
+
+    /* Register見出し（フォームの上に表示） (省略) */
+
+    /* フォーム全体のスタイル */
+    .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        /* 追加: 幅が足りない場合に折り返す */
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    /* ラベル */
+    .form-group label {
+        width: 100%;
+        /* 変更: 幅を100%にする */
+        max-width: 150px;
+        /* 追加: 最大幅を設定 */
+        font-size: 18px;
+        color: #8B7969;
+        text-align: left;
+        white-space: nowrap;
+        margin-right: 0;
+        /* 追加: margin-rightを0にする */
+        margin-bottom: 5px;
+        /* 追加: ラベルの下に余白を追加 */
+    }
+
+    /* 入力欄 */
+    .first_name,
+    .last_name,
+    .email,
+    .phone input,
+    .address,
+    .building,
+    .custom-select,
+    .form-group textarea {
+        width: 100%;
+        /* 変更: 幅を100%にする */
+        max-width: 100%;
+        /* 追加: 最大幅を設定 */
+    }
+
+    .last_name {
+        margin-left: 0;
+        /* 変更: margin-leftを0にする */
+        margin-top: 5px;
+        /* 追加: 上に余白を追加 */
+    }
+
+    /* メディアクエリ */
+    @media screen and (max-width: 768px) {
+
+        /* 768px以下の画面サイズに適用 */
         .form-group {
-            display: flex;
-            flex-wrap: wrap;
-            /* 追加: 幅が足りない場合に折り返す */
-            align-items: center;
-            margin-bottom: 15px;
+            flex-direction: column;
+            /* 変更: 縦並びにする */
+            align-items: flex-start;
+            /* 変更: 左寄せにする */
         }
-    
-        /* ラベル */
+
         .form-group label {
-            width: 100%;
-            /* 変更: 幅を100%にする */
-            max-width: 150px;
-            /* 追加: 最大幅を設定 */
-            font-size: 18px;
-            color: #8B7969;
-            text-align: left;
-            white-space: nowrap;
-            margin-right: 0;
-            /* 追加: margin-rightを0にする */
+            max-width: 100%;
+            /* 変更: 最大幅を100%にする */
             margin-bottom: 5px;
             /* 追加: ラベルの下に余白を追加 */
         }
-    
-        /* 入力欄 */
+
         .first_name,
         .last_name,
         .email,
@@ -255,51 +292,28 @@ main {
         .building,
         .custom-select,
         .form-group textarea {
-            width: 100%;
-            /* 変更: 幅を100%にする */
             max-width: 100%;
-            /* 追加: 最大幅を設定 */
+            /* 変更: 最大幅を100%にする */
         }
-    
-        .last_name {
-            margin-left: 0;
-            /* 変更: margin-leftを0にする */
-            margin-top: 5px;
-            /* 追加: 上に余白を追加 */
-        }
-    
-        /* ラジオボタン (省略) */
-    
-        /* 確認ボタン (省略) */
-    
-        /* メディアクエリ */
-        @media screen and (max-width: 768px) {
-    
-            /* 768px以下の画面サイズに適用 */
-            .form-group {
-                flex-direction: column;
-                /* 変更: 縦並びにする */
-                align-items: flex-start;
-                /* 変更: 左寄せにする */
-            }
-    
-            .form-group label {
-                max-width: 100%;
-                /* 変更: 最大幅を100%にする */
-                margin-bottom: 5px;
-                /* 追加: ラベルの下に余白を追加 */
-            }
-    
-            .first_name,
-            .last_name,
-            .email,
-            .phone input,
-            .address,
-            .building,
-            .custom-select,
-            .form-group textarea {
-                max-width: 100%;
-                /* 変更: 最大幅を100%にする */
-            }
-        }
+    }
 }
+
+.error {
+    color: red;
+}
+
+.address_error {
+    color: red;
+    margin-left: 96px;
+}
+
+.email_error {
+    color: red;
+    margin-left: 7px;
+}
+
+.first_name_error {
+    color: red;
+    margin-left: 10px;
+}
+
