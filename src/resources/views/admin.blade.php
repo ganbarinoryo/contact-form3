@@ -74,6 +74,7 @@
             <td>{{ $contact->category->content ?? '' }}</td>
             <td>
               <button class="detail-button"
+              data-id="{{ $contact->id }}"
               data-last-name="{{ $contact->last_name }}"
               data-first-name="{{ $contact->first_name }}"
               data-gender="{{ $contact->gender }}"
@@ -168,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
           alert("削除しました。");
           modal.style.display = 'none';
           // 一覧から削除した行も削除する（任意）
-          var row = document.getElementById('contact-row-' + currentContactId);
+          var row = document.querySelector('[data-row-id="' + currentContactId + '"]');
           if (row) { row.remove(); }
         } else {
           alert("削除に失敗しました。");

@@ -38,4 +38,13 @@ class AdminController extends Controller
         return view('admin', compact('contacts'))->with('request', $request);
     }
 
+    public function destroy($id)
+    {
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+
+        return response()->json(['message' => 'Deleted successfully']);
+    }
+
+
 }

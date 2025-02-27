@@ -28,6 +28,8 @@ Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login')
 
 Route::get('/admin', [AdminController::class, 'admin']);
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin.search');
+Route::delete('/contact/{id}', [AdminController::class, 'destroy'])->name('contact.destroy');
+
 
 // 入力画面（トップページも含む）
 Route::get('/', [ContactController::class, 'create'])->name('contact.create');
