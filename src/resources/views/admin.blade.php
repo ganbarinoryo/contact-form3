@@ -47,7 +47,7 @@
 
 
     <section class="export-section">
-      <button class="export-button">エクスポート</button>
+      <button class="export-button" id="exportButton">エクスポート</button>
       <!-- ページネーション -->
       <div class="pagination">
           {{ $contacts->links('vendor.pagination.bootstrap-4') }}
@@ -207,6 +207,10 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+  document.getElementById("exportButton").addEventListener("click", function() {
+        window.location.href = "{{ route('admin.export') }}";
+    });
 
 </script>
 

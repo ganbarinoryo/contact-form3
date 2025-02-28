@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class AdminController extends Controller
 {
@@ -44,6 +45,36 @@ class AdminController extends Controller
         $contact->delete();
 
         return response()->json(['message' => 'Deleted successfully']);
+    }
+
+    public function export()
+    {
+        $contacts = Contact::with('category')->get(); // カテゴリ情報を含めて取得
+
+        $response = new StreamedResponse(function () use ($contacts) {
+            $handle = fopen('php://output', 'w');
+
+            // CSVのヘッダー
+            fputcsv($handle, ['お名前', '性別', 'メールアドレス', 'お問い合わせ内容']);
+
+            // CSVのデータ
+            foreach ($contacts as $contact) {
+                fputcsv($handle, [
+                    $contact->last_name . ' ' . $contact->first_name,
+                    $contact->gender == 1 ? '男性' : ($contact->gender == 2 ? '女性' : 'その他'),
+                    $contact->email,
+                    $contact->category->content ?? ''
+                ]);
+            }
+
+            fclose($handle);
+        });
+
+        // CSVのレスポンスヘッダー
+        $response->headers->set('Content-Type', 'text/csv; charset=UTF-8');
+        $response->headers->set('Content-Disposition', 'attachment; filename="contacts.csv"');
+
+        return $response;
     }
 
 

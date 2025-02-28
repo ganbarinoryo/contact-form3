@@ -216,6 +216,13 @@ main {
     cursor: pointer;
 }
 
+/* ホバー時のスタイル */
+.export-button:hover {
+    background-color: #ffde92;
+    color: #8B7969;
+    text-decoration: none;
+}
+
 /* ページネーション全体のコンテナ */
 .pagination {
     padding-top: 7px;
