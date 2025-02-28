@@ -9,7 +9,7 @@
 - **会員登録**
   ![会員登録](https://github.com/ganbarinoryo/contact-form3/raw/main/src/public/images/register.png)
 
-  "localhost/auth/register"で開きます。
+  "localhost/auth/register"と入力すると開きます。
   お名前・メールアドレス・パスワードを入力し、登録ボタンを押すことで users テーブルにデータを作成できます。
   データが無事作成された場合、ログイン画面（/login）に遷移します。
 
@@ -17,7 +17,7 @@
   ![ログイン](https://github.com/ganbarinoryo/contact-form3/raw/main/src/public/images/login.png)
 
   メールアドレスとパスワードを入力しログインに成功した場合、管理画面（/Admin）に遷移します。
-  登録ページのヘッダー右上にある login ボタンを押した場合もこのページに遷移できます。
+  会員登録ページのヘッダー右上にある login ボタンを押した場合もこのページに遷移できます。
 
 - **管理画面**
   ![管理画面](https://github.com/ganbarinoryo/contact-form3/raw/main/src/public/images/admin.png)
@@ -30,8 +30,7 @@
 
   年月日検索フォームでは、矢印ボタンを押すとカレンダーが表示されます。
   日付等を選択することで自分の探しているお問い合わせデータを検索できます。
-  エクスポートボタンを押すことで、CSVデータを保存できます。
-
+  エクスポートボタンを押すことで、CSV データを保存できます。
 
 - **管理画面モーダルウィンドウ**
   ![管理画面モーダルウィンドウ](https://github.com/ganbarinoryo/contact-form3/raw/main/src/public/images/admin_modal.png)
