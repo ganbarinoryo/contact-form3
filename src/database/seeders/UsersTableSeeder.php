@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker::create('ja_JP');
 
-        for ($i = 0; $i < 1; $i++) { // 10人のユーザーを作成
+        for ($i = 0; $i < 35; $i++) { // 10人のユーザーを作成
             DB::table('users')->insert([
                 'name' => $faker->name,
                 'email' => $faker->unique()->safeEmail,

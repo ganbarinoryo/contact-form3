@@ -20,7 +20,7 @@ class ContactsTableSeeder extends Seeder
 
         $categoryIds = DB::table('categories')->pluck('id')->toArray();
 
-        for ($i = 0; $i < 1; $i++) { // 50件のダミーデータを作成
+        for ($i = 0; $i < 35; $i++) { // 50件のダミーデータを作成
             DB::table('contacts')->insert([
                 'first_name' => $faker->firstName, // 日本の名前
                 'last_name' => $faker->lastName,
