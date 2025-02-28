@@ -117,6 +117,4 @@
 
 7. サーバーを立ち上げ、ブラウザでアクセスします。
 
-   docker-compose exec app php artisan serve
-
    サイトにアクセスするには、http://localhost:8000 にブラウザでアクセスしてください。
