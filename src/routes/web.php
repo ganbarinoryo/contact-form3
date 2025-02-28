@@ -26,9 +26,12 @@ Route::post('/auth/register', [AuthController::class, 'register'])->name('regist
 Route::get('/auth/login', [AuthController::class, 'showLogin'])->name('auth.login');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('auth.login');
 
-Route::get('/admin', [AdminController::class, 'admin']);
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin.search');
-Route::get('/admin/export', [AdminController::class, 'export'])->name('admin.export');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/admin', [AdminController::class, 'admin']);
+    Route::get('/admin', [AdminController::class, 'admin'])->name('admin.search');
+    Route::get('/admin/export', [AdminController::class, 'export'])->name('admin.export');
+});
+
 
 Route::delete('/contact/{id}', [AdminController::class, 'destroy'])->name('contact.destroy');
 
@@ -44,7 +47,7 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 // 送信処理（DB登録後、thanks へ）
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
-// 確認画面の表示・送信（確認画面は GET で表示、送信処理は POST で別ルートを利用するケース）
+// 確認画面の表示・送信
 Route::get('/confirm', [ConfirmController::class, 'confirm'])->name('confirm');
 Route::post('/confirm', [ConfirmController::class, 'submit'])->name('confirm.submit');
 
