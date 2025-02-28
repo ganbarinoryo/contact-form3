@@ -1,6 +1,6 @@
 # お問い合わせフォーム
 
-![商品一覧](https://github.com/ganbarinoryo/contact-form3/raw/main/src/public/images/contact.png)
+![お問い合わせフォーム](https://github.com/ganbarinoryo/contact-form3/raw/main/src/public/images/contact.png?raw=true)
 
 ## 機能
 
