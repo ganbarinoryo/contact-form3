@@ -70,7 +70,7 @@
 
 1. リポジトリをクローン
 
-   git clone https://github.com/yourusername/coachtech-fleamarket.git coachtech-hurima
+   git clone https://github.com/ganbarinoryo/contact-form3.git
 
 2. 必要なコンテナをビルドして起動
 
@@ -95,11 +95,17 @@
    DB_USERNAME=laravel_user
    DB_PASSWORD=laravel_pass
 
-5. マイグレーションを実行して、データベースを作成します。
+5. 以下のコマンドを実行して APP_KEY を作成する。
+
+   php artisan key:generate
+
+   .env ファイルを開き、APP_KEY が設定されていれば OK です。
+
+6. マイグレーションを実行して、データベースを作成します。
 
    docker-compose exec app php artisan migrate
 
-6. サーバーを立ち上げ、ブラウザでアクセスします。
+7. サーバーを立ち上げ、ブラウザでアクセスします。
 
    docker-compose exec app php artisan serve
 
