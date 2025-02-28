@@ -30,7 +30,7 @@ class ContactsTableSeeder extends Seeder
                 'tel' => $faker->phoneNumber,
                 'address' => $faker->address,
                 'building' => $faker->secondaryAddress,
-                'detail' => $faker->realText(50), // 50文字程度のテキスト
+                'detail' => '注文した商品と違う商品が届きました。商品の交換をお願いします。',
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
