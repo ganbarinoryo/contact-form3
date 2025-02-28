@@ -209,8 +209,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.getElementById("exportButton").addEventListener("click", function() {
-        window.location.href = "{{ route('admin.export') }}";
-    });
+    // 現在のURLからクエリパラメータを取得
+    var query = window.location.search;
+    // エクスポート用ルートにクエリパラメータを付加してリダイレクト
+    window.location.href = "{{ route('admin.export') }}" + query;
+  });
 
 </script>
 

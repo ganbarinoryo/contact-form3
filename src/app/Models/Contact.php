@@ -31,6 +31,10 @@ class Contact extends Model
         return $gender_mapping[$value] ?? 'その他';
     }
 
+    protected $casts = [
+        'gender' => 'integer',
+    ];
+
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');

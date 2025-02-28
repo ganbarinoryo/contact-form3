@@ -17,8 +17,8 @@ class AdminController extends Controller
             $search = $request->input('search');
             $query->where(function($q) use ($search) {
                 $q->where('first_name', 'like', "%{$search}%")
-                ->orWhere('last_name', 'like', "%{$search}%")
-                ->orWhere('email', 'like', "%{$search}%");
+                  ->orWhere('last_name', 'like', "%{$search}%")
+                  ->orWhere('email', 'like', "%{$search}%");
             });
         }
 
@@ -47,9 +47,34 @@ class AdminController extends Controller
         return response()->json(['message' => 'Deleted successfully']);
     }
 
-    public function export()
+    public function export(Request $request)
     {
-        $contacts = Contact::with('category')->get(); // カテゴリ情報を含めて取得
+        // admin() と同じフィルタリング処理を実施
+        $query = Contact::query();
+
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('first_name', 'like', "%{$search}%")
+                ->orWhere('last_name', 'like', "%{$search}%")
+                ->orWhere('email', 'like', "%{$search}%");
+            });
+        }
+
+        if ($request->filled('gender')) {
+            $query->where('gender', $request->input('gender'));
+        }
+
+        if ($request->filled('order')) {
+            $query->where('content', $request->input('order'));
+        }
+
+        if ($request->filled('date')) {
+            $query->whereDate('created_at', $request->input('date'));
+        }
+
+        // カテゴリ情報を含めた検索結果を取得
+        $contacts = $query->with('category')->get();
 
         $response = new StreamedResponse(function () use ($contacts) {
             $handle = fopen('php://output', 'w');
@@ -61,7 +86,7 @@ class AdminController extends Controller
             foreach ($contacts as $contact) {
                 fputcsv($handle, [
                     $contact->last_name . ' ' . $contact->first_name,
-                    $contact->gender == 1 ? '男性' : ($contact->gender == 2 ? '女性' : 'その他'),
+                    $contact->gender, // アクセサにより「男性」「女性」「その他」が既に設定済み
                     $contact->email,
                     $contact->category->content ?? ''
                 ]);
@@ -76,6 +101,9 @@ class AdminController extends Controller
 
         return $response;
     }
+
+
+
 
 
 }
